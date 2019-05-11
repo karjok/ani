@@ -16,7 +16,7 @@ python ani.py
 type 'help' for more info
 ```
 # Find me on
-<a href='https://fb.me/om.karjok'>Facebook</a></br>
+<a href='https://fb.me/om.karjok' target='blank'>Facebook</a></br>
 <a href='https://t.me/om_karjok'>Telegram</a></br>
-<a href='https://www.instagram.com/karjok.pangesty'>Instagram</a></br>
+<a href='https://www.instagram.com/karjok.pangesty' target='blank'>Instagram</a></br>
 or on <a href='https://t.me/CRABS_ID'>Cracker Noob Squads (CRABS) telegram group</a>
