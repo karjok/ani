@@ -54,7 +54,7 @@ def getimage(link):
 			pref = re.search(r'\/\d(.*?)\.',str(dl)).group(1)
 			names.append(ui+'_'+pref+'.jpg')
 			content.append(dl.get('href'))
-	print(f'\r{len(content)} images collected..',end=''),;sys.stdout.flush()
+	print(f'\r{len(content)} images collected\nctrl + c to stop..',end=''),;sys.stdout.flush()
 def getvideo(link):
 	r = s.get(link).text
 	b = bs(r,'html.parser')
@@ -133,13 +133,20 @@ def go(uid):
 				break
 	else:
 		exit()
-	from multiprocessing.pool import ThreadPool as tp
-	a = tp(1000)
-	print('\ndownloading..')
-	nc = [nc for nc in zip(content,names)]
-	c = a.map(download,nc)
-	print(lc+'\ndone')
-	print(f'{lc}File saved in {lx}Results/{uid}')
+
+
+
+#	from multiprocessing.pool import ThreadPool as tp
+#	a = tp(1000)
+	if len(content) != 0:
+		print(f'\nDownloading {str(len(content))} media..')
+#	nc = [nc for nc in zip(content,names)]
+#	c = a.map(download,nc)
+
+		for i in zip(content,names):
+			download(i)
+		print(lc+f'\n{str(len(content))} media sucessfully downloaded.')
+		print(f'{lc}File saved in {lx}Results/{uid}')
 def cek(id):
 	print(f'{lc}Check {lx}{id}{lc} availabilities..')
 	r = get('https://www.instagram.com/'+id).text
